@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-#maincontent {
+#main-content {
   background-color: #f3f3f3;
   min-height: 100%;
 	width: 100%;
@@ -142,7 +142,7 @@ nav h1 a {
 #restaurants-list {
   background-color: #f3f3f3;
   list-style: outside none none;
-	width: calc(100% - 1.5rem);
+	max-width: 100%;
   margin: 0 auto;
   padding: 3rem 1.5rem 6rem;
   text-align: center;
@@ -151,11 +151,11 @@ nav h1 a {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: auto;
+  margin: 0 auto;
   min-height: 380px;
   padding: 0 30px 25px;
   text-align: left;
-  width: 270px;
+  max-width: 100%;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;

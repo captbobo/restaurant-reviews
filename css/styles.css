@@ -107,10 +107,14 @@ nav h1 a {
     text-decoration: underline;
 }
 /* ====================== Map ======================================= */
+#map-container {
+	height: 65vw;
+	max-height: 19.5rem;
+}
+
 #map {
 	background-color: #ccc;
-  height: 65vw;
-	max-height: 19.5rem;
+  height: 100%;
   width: 100%;
 }
 /* ====================== Restaurant Filtering ====================== */
@@ -215,7 +219,7 @@ nav h1 a {
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.4rem;
   margin: 0.4rem 0;
@@ -228,9 +232,7 @@ nav h1 a {
 }
 
 #restaurant-img {
-	width: 95%;
-	max-width: 100%;
-	margin: 0 2.5%;
+	width: 100%;
 }
 #restaurant-cuisine {
   background-color: #333;
@@ -328,7 +330,7 @@ nav h1 a {
 		padding: 1rem 0;
 		background-color: #fff;
 	}
-
+	/* img-container for main */
 	#restaurants-list .img-container {
 		grid-row: 1 / 5;
 		grid-column: 1 / 2;
@@ -370,6 +372,7 @@ nav h1 a {
 	#restaurants-list li p:nth-of-type(2) {
 		grid-row: 3 / 4;
 		grid-column: 2 / 3;
+		padding-bottom: 0.3rem;
 	}
 
 	#restaurants-list li a {
@@ -377,7 +380,7 @@ nav h1 a {
 		grid-column: 2 / 3;
 		font-size: 0.95rem;
 		margin: 0 1em;
-		padding: 2vw;
+		padding: 0.8rem;
 		width: calc(100% - 2rem);
 	}
 	/* ====================== Restaurant Info ====================== */
@@ -407,6 +410,13 @@ nav h1 a {
 		padding: 0.4em;
 		margin: 0;
 		text-align: center;
+	}
+
+	/* img-container for restaurant details page */
+	.inside .img-container {
+		width: 90%;
+		max-width: 40rem;
+		margin: 1rem auto;
 	}
 
 	#restaurant-cuisine {

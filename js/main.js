@@ -1,8 +1,8 @@
 let restaurants,
   neighborhoods,
-  cuisines
-var newMap
-var markers = []
+  cuisines;
+var newMap;
+var markers = [];
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -169,19 +169,23 @@ createRestaurantHTML = (restaurant) => {
   name.innerHTML = restaurant.name;
   li.append(name);
 
+  const address = document.createElement('address');
+
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
-  li.append(neighborhood);
+  address.append(neighborhood);
 
-  const address = document.createElement('p');
-  address.innerHTML = restaurant.address;
+  const addressLine = document.createElement('p');
+  addressLine.innerHTML = restaurant.address;
+  address.append(addressLine);
+
   li.append(address);
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
-
+  li.tabIndex = 0;
   return li
 }
 
@@ -198,6 +202,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     }
     self.markers.push(marker);
   });
+  // removeMarkersTabIndex();
 
 }
 /* addMarkersToMap = (restaurants = self.restaurants) => {
@@ -210,3 +215,12 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
+
+// removeMarkersTabIndex = () => {
+//   const mapMarkerIcons = Array.from(document.getElementsByClassName('leaflet-marker-icon'));
+//   console.log(mapMarkerIcons);
+//   mapMarkerIcons.forEach( icon => {
+//     console.log(icon.tabIndex);
+//     icon.tabIndex = -1;
+//   });
+// }

@@ -160,8 +160,8 @@ nav h1 a {
   margin: 0;
   padding: 0;
   text-align: center;
-	display: grid;
-	grid-gap: 1em;
+	display: flex;
+  flex-flow: column wrap;
 }
 #restaurants-list li {
 	font-family: Arial,sans-serif;
@@ -303,7 +303,7 @@ nav h1 a {
   position: relative;
   width: 50%;
 }
-/* ========================= Medium Sized Screens ================================ */
+/* ========================= Mid-Sized Screens and Up ================================ */
 @media screen and (min-width:31.25em)  {
 
 	header h1 {
@@ -328,6 +328,7 @@ nav h1 a {
 		grid-auto-rows: min-content max-content;
 		border: none;
 		padding: 1rem 0;
+		margin-bottom: 1rem;
 		background-color: #fff;
 	}
 	/* img-container for main */

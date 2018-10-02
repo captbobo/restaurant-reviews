@@ -162,6 +162,8 @@ createRestaurantHTML = (restaurant) => {
   imgContainer.className = 'img-container';
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = DBHelper.imageAltTextForRestaurant(restaurant);
+
   imgContainer.append(image);
   li.append(imgContainer);
 
@@ -224,3 +226,8 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 //     icon.tabIndex = -1;
 //   });
 // }
+
+// const mapContent = document.getElementsByClassName('leaflet-control');
+// mapContent.querySelectorAll('*');
+// mapContent.tabIndex = -1;
+// console.log(mapContent);

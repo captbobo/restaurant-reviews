@@ -246,9 +246,7 @@ addRestaurantsListTabIndex = () => {
 registerServiceWorker = () => {
   if(!navigator.serviceWorker) return;
   else {
-    navigator.serviceWorker.register('js/sw.js').then(()=>{
-      console.log('yay!')
-    }).catch((err)=>{
+    navigator.serviceWorker.register('js/sw.js').catch((err)=>{
       console.log(err);
     })
   };

@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
+  registerServiceWorker();
 });
 
 /**
@@ -87,6 +88,7 @@ initMap = () => {
   }).addTo(newMap);
 
   updateRestaurants();
+
 }
 /* window.initMap = () => {
   let loc = {
@@ -150,6 +152,8 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     ul.append(createRestaurantHTML(restaurant));
   });
   addMarkersToMap();
+  addRestaurantsListTabIndex();
+
 }
 
 /**
@@ -204,8 +208,8 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     }
     self.markers.push(marker);
   });
-  // removeMarkersTabIndex();
 
+  removeMapItemsTabIndex();
 }
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
@@ -218,16 +222,34 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
-// removeMarkersTabIndex = () => {
-//   const mapMarkerIcons = Array.from(document.getElementsByClassName('leaflet-marker-icon'));
-//   console.log(mapMarkerIcons);
-//   mapMarkerIcons.forEach( icon => {
-//     console.log(icon.tabIndex);
-//     icon.tabIndex = -1;
-//   });
-// }
+ /**
+  * This removes clickable map links and icons from the tab order.
+  * I think the need to tab through map items is counter-productive
+  * for screen readers as the list is already displayed just below it.
+  *
+  * Although; I'm still not sure if this actually adds value to keyboard users...
+  */
+removeMapItemsTabIndex = () => {
+  const mapContent = document.querySelectorAll('#map *');
+  mapContent.forEach((element) => {
+    element.tabIndex = -1;
+  });
+}
 
-// const mapContent = document.getElementsByClassName('leaflet-control');
-// mapContent.querySelectorAll('*');
-// mapContent.tabIndex = -1;
-// console.log(mapContent);
+addRestaurantsListTabIndex = () => {
+  const listContent = document.querySelectorAll('#restaurants-list');
+  listContent.forEach((element) => {
+    element.tabIndex = 0;
+  });
+}
+
+registerServiceWorker = () => {
+  if(!navigator.serviceWorker) return;
+  else {
+    navigator.serviceWorker.register('js/sw.js').then(()=>{
+      console.log('yay!')
+    }).catch((err)=>{
+      console.log(err);
+    })
+  };
+}

@@ -7,6 +7,7 @@ var markers = [];
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
+
 document.addEventListener('DOMContentLoaded', (event) => {
   initMap(); // added
   fetchNeighborhoods();
@@ -90,6 +91,8 @@ initMap = () => {
   updateRestaurants();
 
 }
+
+/* for google maps */
 /* window.initMap = () => {
   let loc = {
     lat: 40.722216,
@@ -211,6 +214,8 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 
   removeMapItemsTabIndex();
 }
+
+/* Use below if opted for google maps */
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
@@ -246,7 +251,7 @@ addRestaurantsListTabIndex = () => {
 registerServiceWorker = () => {
   if(!navigator.serviceWorker) return;
   else {
-    navigator.serviceWorker.register('js/sw.js').catch((err)=>{
+    navigator.serviceWorker.register('/sw.js').catch((err)=>{
       console.log(err);
     })
   };

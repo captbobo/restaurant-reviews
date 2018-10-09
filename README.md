@@ -1,6 +1,6 @@
 # Front-End Nanodegree Certification
 ---
-#### - Restaurant Reviews
+#### Project: Restaurant Reviews
 
 ## Project Overview
 

@@ -12,7 +12,7 @@ body,td,th,p{
 	line-height: 1.5;
 }
 body {
-	background-color: #fdfdfd;
+	background-color: #fcfcfc;
 	margin: 0;
 	position:relative;
 }
@@ -216,6 +216,7 @@ nav h1 a {
 	background: blue none repeat scroll 0 0;
 }
 
+
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
@@ -273,7 +274,7 @@ nav h1 a {
 #reviews-container {
 	padding: 2% 3%;
 }
-#reviews-container h2 {
+#reviews-container h3 {
   color: #f58500;
   font-size: 1.6rem;
   font-weight: 300;
@@ -397,6 +398,8 @@ nav h1 a {
  	#restaurant-container , #reviews-container {
 		width: 100%;
 		padding: 0;
+		max-width: 60em;
+		margin: 0 auto;
 	}
 
 	#restaurant-name {
@@ -430,7 +433,7 @@ nav h1 a {
 		padding-left: 0.4em;
 	}
 
-	#reviews-container h2 {
+	#reviews-container h3 {
 		margin: 0.5rem auto 0.5rem;
 		text-align: center;
 		font-size: 1.3rem;

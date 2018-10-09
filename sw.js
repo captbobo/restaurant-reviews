@@ -1,6 +1,6 @@
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open('restaurant-reviews-s1-v1').then((cache) => {
+    caches.open('restaurant-reviews-v1').then((cache) => {
       return cache.addAll([
       'css/styles.css',
       'data/restaurants.json',
@@ -29,7 +29,7 @@ self.addEventListener('fetch', (event) => {
     caches.match(event.request).then((cacheResponse) => {
       return cacheResponse || fetch(event.request).then((response) => {
         let responseClone = response.clone();
-        caches.open('restaurant-reviews-s1-v1').then((cache) => {
+        caches.open('restaurant-reviews-v1').then((cache) => {
           cache.put(event.request, responseClone);
         })
         return response;

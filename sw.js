@@ -1,3 +1,10 @@
+/**
+ * Articles on MDN "Using Service Workers"(https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+ * and Jake Archibald's "The Offline Cookbook" (`https://jakearchibald.com/2014/offline-cookbook/#network-falling-back-to-cache`)
+ * has helped me greatly coming up with the code.
+ *
+ */
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open('restaurant-reviews-v1').then((cache) => {

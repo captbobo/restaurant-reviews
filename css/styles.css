@@ -57,20 +57,24 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-transform: uppercase;
 }
 /* ====================== Navigation ====================== */
-nav {
+header {
   width: 100%;
   height: auto;
   background-color: #252831;
-  text-align:center;
+	text-align: center;
 }
 
-nav h1 {
+nav {
+	text-align: left;
+}
+
+header h1 {
 	margin-bottom: 0;
 	font-size: 1rem;
 	line-height: 3.1;
 }
 
-nav h1 a {
+header h1 a {
   color: #fff;
   font-weight: 200;
   text-transform: uppercase;
